@@ -33,7 +33,7 @@ Simply balances photos into multiple columns.
 
 ```js
 var layout = require('image-layout/layouts/fixed-columns');
-var positions = layout(elements, {
+var result = layout(elements, {
     containerWidth: 800,
     columnCount: 3
 });
@@ -47,7 +47,7 @@ Uses a partitioning scheme outlined by [Johannes Treitz](https://twitter.com/jtr
 
 ```js
 var layout = require('image-layout/layouts/fixed-partition');
-var positions = layout(elements, {
+var result = layout(elements, {
     containerWidth: 800,
     idealElementHeight: 300
 });
