@@ -1,0 +1,21 @@
+{
+  "name": "image-layout",
+  "version": "0.0.0",
+  "description": "A collection of deterministic image layout algorithms written in pure javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "image",
+    "layout",
+    "mosaic",
+    "grid",
+    "gallery"
+  ],
+  "author": "Brian Reavis <brian@thirdroute.com>",
+  "license": "Apache License, v2.0",
+  "devDependencies": {
+    "webpack": "^1.4.1-beta1"
+  }
+}

@@ -1,0 +1,17 @@
+.photos {
+	position: relative;
+	width: 450px;
+	height: 300px;
+	background: #202020;
+	overflow: hidden;
+}
+.photos div {
+	background-position: center center;
+	background-size: cover;
+}
+
+body {
+	font-family: Helvetica, arial, sans-serif;
+	padding: 80px;
+	font-size: 14px;
+}
