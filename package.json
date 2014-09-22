@@ -1,6 +1,6 @@
 {
   "name": "image-layout",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A collection of deterministic image layout algorithms written in pure javascript.",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,21 @@
     "grid",
     "gallery"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/naturalatlas/image-layout.git"
+  },
   "author": "Brian Reavis <brian@thirdroute.com>",
-  "license": "Apache License, v2.0",
+  "licenses": [
+    {
+      "type": "Apache License, Version 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
   "devDependencies": {
     "webpack": "^1.4.1-beta1"
+  },
+  "engines": {
+    "node": ">=0.8.0"
   }
 }

@@ -2,4 +2,5 @@
 Thumbs.db
 examples/build.js
 node_modules
+*.log
 *.tmp

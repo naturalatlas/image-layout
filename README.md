@@ -27,7 +27,7 @@ for (var i = 0, n = elements.length; i < n; i++) {
 
 ### Layouts
 
-### fixed-columns
+#### fixed-columns
 
 Simply balances photos into multiple columns.
 
@@ -41,7 +41,7 @@ var result = layout(elements, {
 
 <img src="./docs/fixed-columns.jpg?raw=true" width="500" />
 
-### fixed-partition
+#### fixed-partition
 
 Uses a partitioning scheme outlined by [Johannes Treitz](https://twitter.com/jtreitz) in ["The algorithm for a perfectly balanced photo gallery"](https://www.crispymtn.com/stories/the-algorithm-for-a-perfectly-balanced-photo-gallery). It's not the most-efficient option, but it leaves no ragged edges.
 
