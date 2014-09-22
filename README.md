@@ -39,6 +39,8 @@ var positions = layout(elements, {
 });
 ```
 
+<img src="./docs/fixed-columns.jpg?raw=true" width="500" />
+
 ### fixed-partition
 
 Uses a partitioning scheme outlined by [Johannes Treitz](https://twitter.com/jtreitz) in ["The algorithm for a perfectly balanced photo gallery"](https://www.crispymtn.com/stories/the-algorithm-for-a-perfectly-balanced-photo-gallery). It's not the most-efficient option, but it leaves no ragged edges.
@@ -50,6 +52,8 @@ var positions = layout(elements, {
     idealElementHeight: 300
 });
 ```
+
+<img src="./docs/fixed-partition.jpg?raw=true" width="500" />
 
 ## License
 
