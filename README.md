@@ -35,7 +35,8 @@ Simply balances photos into multiple columns.
 var layout = require('image-layout/layouts/fixed-columns');
 var result = layout(elements, {
     containerWidth: 800,
-    columnCount: 3
+    columnCount: 3,
+    spacing: 0
 });
 ```
 
@@ -49,7 +50,8 @@ Uses a partitioning scheme outlined by [Johannes Treitz](https://twitter.com/jtr
 var layout = require('image-layout/layouts/fixed-partition');
 var result = layout(elements, {
     containerWidth: 800,
-    idealElementHeight: 300
+    idealElementHeight: 300,
+    spacing: 0
 });
 ```
 

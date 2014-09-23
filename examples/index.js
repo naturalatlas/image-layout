@@ -33,10 +33,12 @@ function generateGrid(layoutName, options) {
 
 generateGrid('fixed-columns', {
 	containerWidth: 500,
-	columnCount: 3
+	columnCount: 3,
+	spacing: 5
 });
 
 generateGrid('fixed-partition', {
 	containerWidth: 500,
-	idealElementHeight: 150
+	idealElementHeight: 150,
+	spacing: 5
 });

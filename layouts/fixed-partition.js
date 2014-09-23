@@ -7,6 +7,7 @@
  * Options:
  *   - containerWidth      Width of the parent container (in pixels)
  *   - idealElementHeight  Ideal element height (in pixels)
+ *   - spacing             Spacing between items (in pixels)
  *
  * @throws
  * @see https://www.crispymtn.com/stories/the-algorithm-for-a-perfectly-balanced-photo-gallery
@@ -15,8 +16,9 @@
  * @return {object}
  */
 module.exports = function(elements, options) {
-	var i, n, positions = [];
+	var i, n, positions = [], elementCount;
 
+	var spacing = options.spacing || 0;
 	var containerWidth = options.containerWidth;
 	var idealHeight = options.idealElementHeight || (containerWidth / 3);
 	if (!containerWidth) throw new Error('Invalid container width');
@@ -44,8 +46,9 @@ module.exports = function(elements, options) {
 	if (rowsNeeded < 1) {
 		// (2a) Fallback to just standard size
 		var xSum = 0, width;
-		for (var i = 0, n = elements.length; i < n; i++) {
-			width = Math.round(idealHeight * aspects[i]);
+		elementCount = elements.length;
+		for (var i = 0; i < elementCount; i++) {
+			width = Math.round(idealHeight * aspects[i]) - (spacing * (elementCount - 1) / elementCount);
 			positions.push({
 				y: '0px',
 				x: xSum + 'px',
@@ -53,7 +56,11 @@ module.exports = function(elements, options) {
 				height: idealHeight + 'px'
 			});
 			xSum += width;
+			if (i !== n - 1) {
+				xSum += spacing;
+			}
 		}
+		ySum = idealHeight;
 	} else {
 		// (2b) Distribute photos over rows using the aspect ratio as weight
 		var partitions = linear_partition(aspects100, rowsNeeded);
@@ -69,8 +76,9 @@ module.exports = function(elements, options) {
 
 			xSum = 0;
 			height = Math.round(containerWidth / summedRatios);
-			for (j = 0, k = partitions[i].length; j < k; j++) {
-				width = Math.round(containerWidth / summedRatios * aspects[element_index + j]);
+			elementCount = partitions[i].length;
+			for (j = 0; j < elementCount; j++) {
+				width = Math.round((containerWidth - (elementCount - 1) * spacing) / summedRatios * aspects[element_index + j]);
 				positions.push({
 					y: ySum + 'px',
 					x: xSum + 'px',
@@ -78,8 +86,14 @@ module.exports = function(elements, options) {
 					height: height + 'px'
 				});
 				xSum += width;
+				if (j !== elementCount - 1) {
+					xSum += spacing;
+				}
 			}
 			ySum += height;
+			if (i !== n - 1) {
+				ySum += spacing;
+			}
 		}
 	}
 

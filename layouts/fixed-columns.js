@@ -4,6 +4,7 @@
  * Options:
  *   - containerWidth   Width of the parent container (in pixels)
  *   - columnCount      Number of columns
+ *   - spacing          Spacing between items (in pixels)
  *
  * @throws
  * @param {object[]} elements
@@ -13,10 +14,11 @@
 module.exports = function(elements, options) {
 	var i, j, l, n, k, limit, i_column,col, colMin, src_width, src_height, dst_width, dst_height, aspect;
 
+	var spacing = options.spacing || 0;
 	var containerWidth = options.containerWidth;
 	if (!containerWidth) throw new Error('Invalid container width');
 	var columnCount = options.columnCount || 3;
-	var columnWidth = Math.round(containerWidth / columnCount);
+	var columnWidth = Math.round((containerWidth - (columnCount - 1) * spacing) / columnCount);
 	var maxSpan = options.maxSpan || 3;
 
 	var positions = [];
@@ -44,10 +46,12 @@ module.exports = function(elements, options) {
 
 		// update the column heights
 		var y = cols[col];
-		cols[col] += dst_height;
+		var adj = (y !== 0) ? spacing : 0;
+		y += adj;
+		cols[col] += dst_height + adj;
 
 		positions.push({
-			x: (col * columnWidth) + 'px',
+			x: (col * columnWidth + col * spacing) + 'px',
 			y: y + 'px',
 			width: dst_width + 'px',
 			height: dst_height + 'px'
