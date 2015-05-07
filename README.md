@@ -66,7 +66,7 @@ Constrains a single image to a given area.
 var layout = require('image-layout/layouts/single');
 var result = layout(elements, {
     maxWidth: 800,
-    maxWidth: 800
+    maxHeight: 800
 });
 ```
 
