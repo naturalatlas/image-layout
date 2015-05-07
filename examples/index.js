@@ -1,14 +1,5 @@
-function generateGrid(layoutName, options) {
+function generateGrid(layoutName, options, images) {
 	var layout = require('../layouts/' + layoutName + '.js');
-	var images = [
-		{src: 'photos/1.jpg', width: 600/2, height: 400/2},
-		{src: 'photos/2.jpg', width: 400/2, height: 600/2},
-		{src: 'photos/3.jpg', width: 480/2, height: 600/2},
-		{src: 'photos/4.jpg', width: 600/2, height: 355/2},
-		{src: 'photos/5.jpg', width: 600/2, height: 400/2},
-		{src: 'photos/6.jpg', width: 600/2, height: 400/2},
-		{src: 'photos/7.jpg', width: 600/2, height: 366/2}
-	];
 
 	// calculate positioning
 	var photoset = document.createElement('div');
@@ -35,10 +26,33 @@ generateGrid('fixed-columns', {
 	containerWidth: 500,
 	columnCount: 3,
 	spacing: 5
-});
+}, [
+	{src: 'photos/1.jpg', width: 600/2, height: 400/2},
+	{src: 'photos/2.jpg', width: 400/2, height: 600/2},
+	{src: 'photos/3.jpg', width: 480/2, height: 600/2},
+	{src: 'photos/4.jpg', width: 600/2, height: 355/2},
+	{src: 'photos/5.jpg', width: 600/2, height: 400/2},
+	{src: 'photos/6.jpg', width: 600/2, height: 400/2},
+	{src: 'photos/7.jpg', width: 600/2, height: 366/2}
+]);
 
 generateGrid('fixed-partition', {
 	containerWidth: 500,
 	idealElementHeight: 150,
 	spacing: 5
-});
+}, [
+	{src: 'photos/1.jpg', width: 600/2, height: 400/2},
+	{src: 'photos/2.jpg', width: 400/2, height: 600/2},
+	{src: 'photos/3.jpg', width: 480/2, height: 600/2},
+	{src: 'photos/4.jpg', width: 600/2, height: 355/2},
+	{src: 'photos/5.jpg', width: 600/2, height: 400/2},
+	{src: 'photos/6.jpg', width: 600/2, height: 400/2},
+	{src: 'photos/7.jpg', width: 600/2, height: 366/2}
+]);
+
+generateGrid('single', {
+	maxWidth: 500,
+	maxHeight: 290
+}, [
+	{src: 'photos/2.jpg', width: 400/2, height: 600/2}
+]);

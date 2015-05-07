@@ -57,9 +57,22 @@ var result = layout(elements, {
 
 <img src="./docs/fixed-partition.jpg?raw=true" width="500" />
 
+
+#### single
+
+Constrains a single image to a given area.
+
+```js
+var layout = require('image-layout/layouts/single');
+var result = layout(elements, {
+    maxWidth: 800,
+    maxWidth: 800
+});
+```
+
 ## License
 
-Copyright &copy; 2014 [Brian Reavis](https://github.com/brianreavis) & [Contributors](https://github.com/naturalatlas/image-layout/graphs/contributors)
+Copyright &copy; 2015 [Natural Atlas, Inc.](https://github.com/naturalatlas) & [Contributors](https://github.com/naturalatlas/image-layout/graphs/contributors)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0
 
