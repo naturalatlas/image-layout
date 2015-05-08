@@ -50,9 +50,20 @@ generateGrid('fixed-partition', {
 	{src: 'photos/7.jpg', width: 600/2, height: 366/2}
 ]);
 
+generateGrid('fixed-partition', {
+	containerWidth: 1000,
+	idealElementHeight: 150,
+	spacing: 5,
+	align: 'center'
+}, [
+	{src: 'photos/2.jpg', width: 400/2, height: 600/2},
+	{src: 'photos/3.jpg', width: 480/2, height: 600/2}
+]);
+
 generateGrid('single', {
-	maxWidth: 500,
-	maxHeight: 290
+	containerWidth: 1000,
+	maxHeight: 290,
+	align: 'center'
 }, [
 	{src: 'photos/2.jpg', width: 400/2, height: 600/2}
 ]);

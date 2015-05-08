@@ -47,11 +47,21 @@ module.exports = function(elements, options) {
 		// (2a) Fallback to just standard size
 		var xSum = 0, width;
 		elementCount = elements.length;
+
+		var padLeft = 0;
+		if (options.align === 'center') {
+			var spaceNeeded = (elementCount-1)*spacing;
+			for (var i = 0; i < elementCount; i++) {
+				spaceNeeded += Math.round(idealHeight * aspects[i]) - (spacing * (elementCount - 1) / elementCount);
+			}
+			padLeft = Math.floor((containerWidth - spaceNeeded) / 2);
+		}
+
 		for (var i = 0; i < elementCount; i++) {
 			width = Math.round(idealHeight * aspects[i]) - (spacing * (elementCount - 1) / elementCount);
 			positions.push({
 				y: '0px',
-				x: xSum + 'px',
+				x: (padLeft+xSum) + 'px',
 				width: width + 'px',
 				height: idealHeight + 'px'
 			});

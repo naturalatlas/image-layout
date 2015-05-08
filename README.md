@@ -49,6 +49,7 @@ Uses a partitioning scheme outlined by [Johannes Treitz](https://twitter.com/jtr
 ```js
 var layout = require('image-layout/layouts/fixed-partition');
 var result = layout(elements, {
+    align: 'center', // optional
     containerWidth: 800,
     idealElementHeight: 300,
     spacing: 0
@@ -65,7 +66,8 @@ Constrains a single image to a given area.
 ```js
 var layout = require('image-layout/layouts/single');
 var result = layout(elements, {
-    maxWidth: 800,
+    align: 'center', // optional
+    containerWidth: 800,
     maxHeight: 800
 });
 ```

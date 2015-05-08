@@ -2,8 +2,8 @@
  * Algorithm: fixed-columns
  *
  * Options:
- *   - maxWidth   Max width of the parent container (in pixels)
- *   - maxHeight   Max height of the parent container (in pixels)
+ *   - containerWidth Max width of the parent container (in pixels)
+ *   - maxHeight Max height of the parent container (in pixels)
  *
  * @throws
  * @param {object[]} elements
@@ -15,14 +15,15 @@ module.exports = function(elements, options) {
 
 	var scale = 1;
 	if (el.width * scale > options.maxWidth) scale = options.maxWidth / el.width;
-	if (el.height * scale > options.maxHeight) scale *= options.maxHeight / (scale * el.height);
+	if (el.height * scale > options.containerWidth) scale *= options.containerWidth / (scale * el.height);
 
-	var w = Math.round(el.width * scale) + 'px';
-	var h = Math.round(el.height * scale) + 'px';
+	var w = Math.round(el.width * scale);
+	var h = Math.round(el.height * scale);
+	var padLeft = options.align === 'center' ? Math.floor((options.containerWidth - w)/2) : 0;
 
 	return {
-		width: w,
-		height: h,
-		positions: [{x: '0px', y: '0px', width: w, height: h}]
+		width: options.containerWidth + 'px',
+		height: h + 'px',
+		positions: [{x: padLeft + 'px', y: '0px', width: w + 'px', height: h + 'px'}]
 	};
 };
