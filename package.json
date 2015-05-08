@@ -1,6 +1,6 @@
 {
   "name": "image-layout",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A collection of deterministic image layout algorithms written in pure javascript.",
   "main": "index.js",
   "scripts": {
