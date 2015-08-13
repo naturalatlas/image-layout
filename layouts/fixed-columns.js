@@ -51,17 +51,17 @@ module.exports = function(elements, options) {
 		cols[col] += dst_height + adj;
 
 		positions.push({
-			x: (col * columnWidth + col * spacing) + 'px',
-			y: y + 'px',
-			width: dst_width + 'px',
-			height: dst_height + 'px'
+			x: (col * columnWidth + col * spacing),
+			y: y,
+			width: dst_width,
+			height: dst_height
 		});
 	}
 
 	// TODO: equalize columns w/option?
 	return {
-		width: containerWidth + 'px',
-		height: Math.max.apply(Math, cols) + 'px',
+		width: containerWidth,
+		height: Math.max.apply(Math, cols),
 		positions: positions
 	}
 };

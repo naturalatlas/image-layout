@@ -60,10 +60,10 @@ module.exports = function(elements, options) {
 		for (var i = 0; i < elementCount; i++) {
 			width = Math.round(idealHeight * aspects[i]) - (spacing * (elementCount - 1) / elementCount);
 			positions.push({
-				y: '0px',
-				x: (padLeft+xSum) + 'px',
-				width: width + 'px',
-				height: idealHeight + 'px'
+				y: 0,
+				x: padLeft + xSum,
+				width: width,
+				height: idealHeight
 			});
 			xSum += width;
 			if (i !== n - 1) {
@@ -90,10 +90,10 @@ module.exports = function(elements, options) {
 			for (j = 0; j < elementCount; j++) {
 				width = Math.round((containerWidth - (elementCount - 1) * spacing) / summedRatios * aspects[element_index + j]);
 				positions.push({
-					y: ySum + 'px',
-					x: xSum + 'px',
-					width: width + 'px',
-					height: height + 'px'
+					y: ySum,
+					x: xSum,
+					width: width,
+					height: height
 				});
 				xSum += width;
 				if (j !== elementCount - 1) {
@@ -108,8 +108,8 @@ module.exports = function(elements, options) {
 	}
 
 	return {
-		width: containerWidth + 'px',
-		height: ySum + 'px',
+		width: containerWidth,
+		height: ySum,
 		positions: positions
 	};
 };

@@ -22,8 +22,8 @@ module.exports = function(elements, options) {
 	var padLeft = options.align === 'center' ? Math.floor((options.containerWidth - w)/2) : 0;
 
 	return {
-		width: options.containerWidth + 'px',
-		height: h + 'px',
-		positions: [{x: padLeft + 'px', y: '0px', width: w + 'px', height: h + 'px'}]
+		width: options.containerWidth,
+		height: h,
+		positions: [{x: padLeft, y: 0, width: w, height: h}]
 	};
 };
