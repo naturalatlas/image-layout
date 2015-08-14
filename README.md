@@ -1,6 +1,6 @@
 # image-layout
 
-A collection of deterministic image layout algorithms written in pure javascript that work just as well on a server as in a browser.
+A collection of deterministic image layout algorithms written in pure javascript that work just as well on a server as in a browser. None of them are tied to the DOM in any way.
 
 ```sh
 $ npm install image-layout --save
@@ -8,7 +8,7 @@ $ npm install image-layout --save
 
 ### Sample Usage
 ```js
-var layout = require('image-layout/layout/fixed-partition');
+var layout = require('image-layout/layouts/fixed-partition');
 var elements = [
 	{width: 400, height: 300},
 	{width: 200, height: 100}
