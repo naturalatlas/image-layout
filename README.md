@@ -1,4 +1,5 @@
 # image-layout
+[![NPM version](http://img.shields.io/npm/v/image-layout.svg?style=flat)](https://www.npmjs.org/package/image-layout)
 
 A collection of deterministic image layout algorithms written in pure javascript that work just as well on a server as in a browser. None of them are tied to the DOM in any way.
 

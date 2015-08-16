@@ -10,11 +10,11 @@ function generateGrid(layoutName, options, images) {
 	var elements = [];
 	var positions = result.positions;
 	for (var i = 0, n = positions.length; i < n; i++) {
-		elements.push('<div style="background-image:url(' + images[i].src + ');width:' + positions[i].width + ';height:' + positions[i].height + ';left:' + positions[i].x + ';top:' + positions[i].y + ';position:absolute;"></div>');
+		elements.push('<div style="background-image:url(' + images[i].src + ');width:' + positions[i].width + 'px;height:' + positions[i].height + 'px;left:' + positions[i].x + 'px;top:' + positions[i].y + 'px;position:absolute;"></div>');
 	}
 	photoset.innerHTML = elements.join('');
-	photoset.style.width = result.width;
-	photoset.style.height = result.height;
+	photoset.style.width = result.width + 'px';
+	photoset.style.height = result.height + 'px';
 
 	var container = document.createElement('div');
 	container.innerHTML += '<h2><code>' + layoutName + '</code></h2>';
