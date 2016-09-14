@@ -16,7 +16,7 @@
  * @return {object}
  */
 module.exports = function(elements, options) {
-	var i, n, positions = [], elementCount;
+	var i, j, k, n, height, positions = [], elementCount;
 
 	var spacing = options.spacing || 0;
 	var containerWidth = options.containerWidth;
@@ -209,6 +209,7 @@ var linear_partition = function(seq, k) {
 		].concat(ans);
 		n = solution[n - 1][k];
 		k = k - 1;
+		if (n === 0) break;
 	}
 	return [
 		(function() {
